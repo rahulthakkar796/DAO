@@ -12,28 +12,25 @@
         ></v-toolbar-side-icon>
 
         <!-- <v-icon
-        
           v-if="$router.currentRoute.name!='DAO' && $router.currentRoute.name!='proposal' && $router.currentRoute.name!='history'"
           height="40px"
           @click="toHome"
-       
         >home</v-icon>-->
 
         <v-spacer></v-spacer>
-        <!-- <img
-          v-if="$router.currentRoute.name=='DAO' || $router.currentRoute.name=='proposal' || $router.currentRoute.name=='history'"
-          width="110px"
-          height="40px"
-          style="margin-left:20%; margin-right:32%"
-          @click="toHome"
-          class="hidden-lg-and-up"
-          src="./assets/BlueQbit.png"
-        >-->
         <v-icon
-          v-if="$router.currentRoute.name=='DAO' || $router.currentRoute.name=='proposal' || $router.currentRoute.name=='history'"
+          v-if="$router.currentRoute.name!=='home'"
           size="40"
           color="white"
-          style="margin-left:40%; margin-right:40%"
+          style="margin-left:40%; margin-right:43%"
+          @click="toHome"
+          class="hidden-lg-and-up"
+        >home</v-icon>
+        <v-icon
+          v-if="$router.currentRoute.name!=='home'"
+          size="40"
+          color="white"
+          style="margin-left:40%; margin-right:43%"
           @click="toHome"
           class="hidden-md-and-down"
         >home</v-icon>
@@ -295,8 +292,24 @@
       {{$store.state.text}}
       <v-btn color="white" flat @click="$store.state.snack = false">Close</v-btn>
     </v-snackbar>
+
+    <v-footer v-if="$router.currentRoute.name=='home'" dark height="auto">
+      <v-card class="flex" flat>
+        <v-card-actions class="darken-3 justify-center">
+            <v-tooltip lazy top>
+            <template v-slot:activator="{ on }">
+          <a v-on="on" href="https://github.com/rahulthakkar796/DAO" target="_blank">
+            <i target="_blank" style="font-size:35px;color:white" class="fa fa-github pa-1 ml-3"></i>
+          </a>
+            </template>
+               <span>Click here to open repository</span>
+          </v-tooltip>
+        </v-card-actions>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
+  
 
 <script>
 import { TNStoken } from "./../embarkArtifacts/contracts";
