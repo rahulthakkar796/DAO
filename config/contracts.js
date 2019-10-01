@@ -77,10 +77,10 @@ module.exports = {
       accounts: [
         {
           mnemonic:
-            'alone plastic escape solar liberty tattoo route save moral reject expect pioneer'
+            'Your mnemonic'
         }
       ],
-      host: 'goerli.infura.io/v3/06a5d40111fe41f6a983cf17f5874505',
+      host: 'your infura project link',
       port: false,
       protocol: 'https',
       type: 'rpc'
