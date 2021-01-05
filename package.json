@@ -12,7 +12,7 @@
     "@vue/babel-preset-app": "^3.7.0",
     "aos": "^2.3.4",
     "autoprefixer": "^9.5.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "particles.js": "^2.0.0",
     "rxjs": "^6.5.2",
